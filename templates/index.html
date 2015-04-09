@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <!-- ==== Background section ====-->
+    <section id="hero" class="hero-section hero-layout-simple hero-layout-fullscreen-subscription-form hero-fullscreen section section-dark">
+        <div class="section-background">
+            <div class="section-background-image parallax" data-stellar-ratio="0.4">
+                <img src="{% static 'images/Ultra-Music-Festival-Miami-HD-Wallpaper.jpg' %}" alt="" style="opacity: 0.5;">
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-content-inner">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="hero-heading" data-animation="fadeIn">
+                                <h1 class="hero-title">Raver Flavour</h1>
+                                <p class="hero-tagline">Your Music Festival Subscription Box</p>
+                                <p class="hero-buttons">
+                                    <a href="#benefits" class="btn btn-lg btn-default">Learn More</a>
+                                    <a href="/payment/subscribe" class="btn btn-lg btn-primary">Subscribe</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO START LINK -->
+        <a href="#headline" class="hero-start-link anchor-link"><span class="fa fa-angle-double-down"></span></a>
+    </section>
+
+    <!-- HEADLINE
+    =================================-->
+    <section id="headline" class="headline-section section-gray section">
+        <div class="container">
+            <h2 class="section-heading text-center hidden">Tagline</h2>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="headline-text">
+                        Curated by the world's greatest taste-makers, <strong>RaverFlavour</strong> is your premium music festival accessories box.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESCRIPTION
+            ================================= -->
+    <section id="about" class="about-section section">
+
+        <div class="container">
+
+            <h2 class="section-heading text-center">THE QUARTERLY BOX</h2>
+
+            <div class="about-row row">
+
+                <!-- DESCRIPTION IMAGE -->
+                <div class="about-image col-md-6" data-animation="fadeIn">
+                    <img src="{% static '' %}" alt="About Image">
+                    <h3>Image Placeholder</h3>
+                </div>
+
+                <!-- DESCRIPTION TEXT -->
+                <div class="about-text col-md-6">
+                    <p class="lead">Get quarterly deliveries of music festival essentials, tailored to you. Try new brands, get artist exclusive products, and everything in between.</p>
+                    <ul class="icon-list">
+                        <li>
+                            <span class="icon-list-icon fa fa-hand-o-up" data-animation="bounceIn"></span>
+                            <h4 class="icon-list-title">Re-up on Essentials</h4>
+                            <p>Each box is loaded with all the music festival gear you need to turn up the fun and keep you safe. </p>
+                        </li>
+                        <li>
+                            <span class="icon-list-icon fa fa-lightbulb-o" data-animation="bounceIn"></span>
+                            <h4 class="icon-list-title">Shine Shine Shine</h4>
+                            <p>Do you like to shine? So do we.</p>
+                        </li>
+                        <li>
+                            <span class="icon-list-icon fa fa-heart-o" data-animation="bounceIn"></span>
+                            <h4 class="icon-list-title">Spread The Love!</h4>
+                            <p>Each box comes with goodies you can give out to others</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BENEFITS
+    ================================= -->
+    <section id="benefits" class="benefits-section section-gray section">
+
+        <div class="container">
+
+            <h2 class="section-heading text-center">The Benefits</h2>
+
+            <div class="benefits-row row">
+
+                <!-- BENEFIT 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="benefit">
+                        <span class="benefit-icon fa fa-clock-o" data-animation="bounceIn"></span>
+                        <h4 class="benefit-title">Save Time Shopping</h4>
+                        <p class="benefit-description">Why go shopping over and over again for the same essentials? We supply you with musical festival essentials like hydration packs, chapstick, nasal spray, diffraction glasses, and candy.</p>
+                    </div>
+                </div>
+
+                <!-- BENEFIT 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="benefit">
+                        <span class="benefit-icon fa fa-smile-o" data-animation="bounceIn"></span>
+                        <h4 class="benefit-title">Discover New Products</h4>
+                        <p class="benefit-description">We get our products for artists, craft candy makers, indy designers, and the world's greatest DJs.</p>
+                    </div>
+                </div>
+
+                <div class="hidden-md hidden-lg clear"></div>
+
+                <!-- BENEFIT 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="benefit">
+                        <span class="benefit-icon fa fa-gift" data-animation="bounceIn"></span>
+                        <h4 class="benefit-title">Give Gifts to Friends</h4>
+                        <p class="benefit-description">What's better than getting a gift? Giving one!</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GOOGLE MAPS
+    ================================= -->
+    <section id="maps" class="maps-section section">
+
+        <div class="container-fluid maps-row">
+
+            <!-- MAPS IMAGE -->
+            <div class="maps-image" data-animation="fadeIn">
+                <div id="gmap"></div>
+
+                <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+                <!-- GOGGLE MAPS CONFIGURATION -->
+                <!-- ref: http://maplacejs.com/ -->
+                <script>
+                var gmap_options = {
+                    generate_controls : false,
+                    locations : [{
+                        lat : 37.782193,
+                        lon : -122.406669,
+                        animation : google.maps.Animation.DROP,
+                        html : "RF Headquarters",
+                    }],
+                    map_options : {
+                        scrollwheel : false,
+                        mapTypeControl : false,
+                        streetViewControl : false,
+                        zoomControlOptions : {
+                            style : google.maps.ZoomControlStyle.SMALL,
+                        },
+                        zoom : 15,
+                    }
+                };
+                </script>
+            </div>
+
+            <!-- MAPS TEXT -->
+            <div class="maps-text" data-animation="fadeIn">
+
+                <div class="maps-text-inner">
+
+                    <h2 class="section-heading text-left">Made with <span class="fa fa-heart text-primary"></span> in San Francisco, CA USA</h2>
+
+                    <p>We always like hearing feedback on how to better improve our boxes. Write us!</p>
+
+                    <div class="row">
+                        <address class="col-sm-6">
+                            <strong>RaverFlavour Headquarters</strong>
+                            <ul class="fa-ul">
+                                <li><i class="fa-li fa fa-home"></i>901 Mission St.,<br>San Francisco, CA USA</li>
+                                <li><i class="fa-li fa fa-phone"></i>Phone: 1-800 654-2600</li>
+                            </ul>
+                        </address>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+            <!-- CLOSING
+            ================================= -->
+            <section id="closing" class="closing-section section-dark section">
+
+
+                <div class="container">
+
+                    <h3 class="closing-shout">Sign up for a Box Today</h3>
+
+                    <div class="closing-buttons"><a href="/payment/subscribe" class="btn btn-lg btn-primary">Sign Up</a></div>
+
+                </div>
+
+            </section>
+
+{% endblock %}
